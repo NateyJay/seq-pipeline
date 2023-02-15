@@ -45,6 +45,11 @@ kallisto quant
 kallisto index
 ```
 
+The tool uses several python packages you may not have, which can be installed through the python package manager pip, i.e.
+```
+pip install click
+```
+
 
 ### How to use it?
 
