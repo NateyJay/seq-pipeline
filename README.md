@@ -27,6 +27,24 @@ chmod +x ./seq-pipeline.py
 ./seq-pipeline.py
 ```
 
+As a wrapper, this just uses other tools. It is not sophisticated enough to confirm they function, so you must download, install, and have command-line executable from your PATH the following tools:
+
+```
+## sra-tools from NCBI
+prefetch
+fasterq-dump
+
+## fastqc (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+fastqc
+
+## cutadapt (https://cutadapt.readthedocs.io/en/stable/)
+cutadapt 
+
+## kallisto (https://pachterlab.github.io/kallisto/)
+kallisto quant
+kallisto index
+```
+
 
 ### How to use it?
 
