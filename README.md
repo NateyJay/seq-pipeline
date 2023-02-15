@@ -48,7 +48,7 @@ kallisto index
 
 ### How to use it?
 
-Currently, the tool only supports one pipeline. This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code.
+Currently, the tool only supports one pipeline. This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code. The cleanup step removes the NCBI files, including trimmed and untrimmed libraries.
 
 
 ```
