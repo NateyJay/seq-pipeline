@@ -45,10 +45,15 @@ kallisto quant
 kallisto index
 ```
 
+The tool uses several python packages you may not have, which can be installed through the python package manager pip, i.e.
+```
+pip install click
+```
+
 
 ### How to use it?
 
-Currently, the tool only supports one pipeline. This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code.
+Currently, the tool only supports one pipeline. This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code. The cleanup step removes the NCBI files, including trimmed and untrimmed libraries.
 
 
 ```
