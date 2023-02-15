@@ -6,7 +6,6 @@ from subprocess import PIPE, Popen, call
 from pathlib import Path
 from os.path import isfile, isdir
 from pprint import pprint
-from tqdm import tqdm
 from time import sleep
 
 
