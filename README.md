@@ -72,7 +72,6 @@ This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq
 This requires ChIP libraries, which may have replicates and treatment/control designations. This process requires treatments, while control (input) libraries are optional for macs2.
 
 ```
-
 ## treatment library
 seq-pipeline.py download SRR799817
 seq-pipeline.py trim SRR799817
