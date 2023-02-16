@@ -92,8 +92,8 @@ seq-pipeline.py cleanup SRR799817
 ### Problems
 
 1) **Not very smart**. You may have problems or errors in steps. If so, the script will likely produce a bad file which the next step will have an error with. You will need to look at the output of the run to identify where these broken files are and remedy them. Each step just looks for its expected input, and does little to confirm it is what it actually should be.
-2) **Non NCBI accessions**. If you need to use an accession that is not in the NCBI (e.g. chinese accessions CNNxxxxx), you must download them manually. The software should function for trim and subsequent steps if you nest save them in a folder named by their own accession, in this format: ```{accession}/{accession}.fastq```
-
+2) **Non NCBI accessions**. If you need to use an accession that is not in the NCBI (e.g. chinese accessions CNNxxxxx), you must download them manually. The software should function for trim and subsequent steps if you nest save them in a folder named by their own accession, in this format: ```{accession}/{accession}.fastq```.
+3) **Large memory buffer**. While the cleanup steps ensure you won't keep large files around after the analysis, the software is not very respectful of hard drive space *while* analyzing. It produces multiple somewhat redundant bams, fastqs... You should be aware that you will need significant free space to run these analyses.
 
 
 
