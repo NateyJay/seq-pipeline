@@ -55,8 +55,10 @@ pip install click
 
 ### How to use it?
 
-Currently, the tool only supports one pipeline. This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code. The cleanup step removes the NCBI files, including trimmed and untrimmed libraries.
+Several functions are generic, with the endpoint functions (kallisto, chip) being interchangeable
 
+#### Quantification
+This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code. The cleanup step removes the NCBI files, including trimmed and untrimmed libraries.
 
 ```
 ./seq-pipeline.py download SRR6369351
@@ -64,3 +66,35 @@ Currently, the tool only supports one pipeline. This downloads, trims, performs 
 ./seq-pipeline.py kallisto SRR6369351 transcriptome.fa
 ./seq-pipeline.py cleanup SRR6369351
 ```
+
+#### ChIP peak finding
+
+This requires ChIP libraries, which may have replicates and treatment/control designations. This process requires treatments, while control (input) libraries are optional for macs2.
+
+```
+
+## treatment library
+seq-pipeline.py download SRR799817
+seq-pipeline.py trim SRR799817
+
+## control library
+seq-pipeline.py download SRR799819
+seq-pipeline.py trim SRR799819
+
+## chip analysis
+seq-pipeline.py chip -t SRR799817 -c SRR799819 ./Solyc.GCF_000188115.4_SL3.0.fa -o chip_output
+
+## cleanup
+seq-pipeline.py cleanup SRR799817
+seq-pipeline.py cleanup SRR799817
+```
+
+
+### Problems
+
+1) **Not very smart**. You may have problems or errors in steps. If so, the script will likely produce a bad file which the next step will have an error with. You will need to look at the output of the run to identify where these broken files are and remedy them. Each step just looks for its expected input, and does little to confirm it is what it actually should be.
+2) **Non NCBI accessions**. If you need to use an accession that is not in the NCBI (e.g. chinese accessions CNNxxxxx), you must download them manually. The software should function for trim and subsequent steps if you nest save them in a folder named by their own accession, in this format: ```{accession}/{accession}.fastq```
+
+
+
+
