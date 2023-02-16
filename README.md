@@ -85,7 +85,7 @@ seq-pipeline.py chip -t SRR799817 -c SRR799819 ./Solyc.GCF_000188115.4_SL3.0.fa 
 
 ## cleanup
 seq-pipeline.py cleanup SRR799817
-seq-pipeline.py cleanup SRR799817
+seq-pipeline.py cleanup SRR799819
 ```
 
 
