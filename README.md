@@ -12,6 +12,8 @@ Basically, this is just a set of wrappers for common RNA-seq tools. Here, I stan
 
 Finally, the real key of this tool is the '''cleanup''' function. This will remove the large files downloaded from the NCBI, saving valuable disk space while retaining the analyses.
 
+All of the analyses are set to run in single-core mode, with the idea that you would clone this process across many libraries in parallel.
+
 
 
 ### Requirements and installation
