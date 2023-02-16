@@ -57,7 +57,7 @@ pip install click
 
 Several functions are generic, with the endpoint functions (kallisto, chip) being interchangeable
 
-#### Quantification
+#### -> Quantification
 This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq data based on SRR code. The cleanup step removes the NCBI files, including trimmed and untrimmed libraries.
 
 ```
@@ -67,7 +67,7 @@ This downloads, trims, performs QC, and quantifies single- or paired-end RNA seq
 ./seq-pipeline.py cleanup SRR6369351
 ```
 
-#### ChIP peak finding
+#### -> ChIP peak finding
 
 This requires ChIP libraries, which may have replicates and treatment/control designations. This process requires treatments, while control (input) libraries are optional for macs2.
 
