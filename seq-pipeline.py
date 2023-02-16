@@ -381,6 +381,7 @@ def get_genome_size(output_directory, genome_file):
 		for line in p.stdout:
 			print("[measure_genome]", line.strip())
 			print(line.strip(), file=outf)
+			return(line.strip().split()[0])
 
 
 def macs2(treatments, controls, genome_file, genome_size, output_directory):
@@ -413,6 +414,7 @@ def macs2(treatments, controls, genome_file, genome_size, output_directory):
 	for line in p.stderr:
 			print("[macs2_callpeak]", line.strip())
 
+	p.wait()
 
 
 
